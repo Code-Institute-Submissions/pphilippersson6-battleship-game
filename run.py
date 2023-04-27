@@ -1,3 +1,8 @@
+"""
+This script implements a simple game of Battleship, where the player and the
+computer plays versus eachother, to guess where the battleships
+are hiding on the board. You win when you can sink the computers ship.
+"""
 from random import randint
 
 
