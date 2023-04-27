@@ -13,7 +13,7 @@ def initialize_board(rows, cols):
         A list of lists representing the game board.
     """
     board = []
-    for x in range(rows):
+    for _ in range(rows):
         board.append(["O"] * cols)
     return board
 
@@ -51,7 +51,7 @@ def play_game():
 
     # allow the player 4 turns to guess the battleship's location
     for turn in range(4):
-        print("\nTurn", turn + 1)
+        print(f"\nTurn {turn + 1}")
 
         # prompt the user to guess a row and column
         try:
@@ -59,6 +59,7 @@ def play_game():
             guess_col = int(input("Guess Col (0-4): "))
         except ValueError:
             print("Please enter a valid integer.")
+            continue
 
         if guess_row == ship_row and guess_col == ship_col:
             print("Congratulations! You sunk my battleship!")
