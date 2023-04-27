@@ -39,19 +39,6 @@ def play_game():
     Returns:
         None
     """
-
-    for row in board:
-        print(" ".join(row))
-
-
-def play_game():
-    """
-    Play a game of Battleship.
-
-    Returns:
-        None
-    """
-
     # initialize the game board
     board = initialize_board(5, 5)
 
@@ -61,7 +48,6 @@ def play_game():
     # randomly place the battleship
     ship_row = randint(0, len(board) - 1)
     ship_col = randint(0, len(board[0]) - 1)
-
 
     # allow the player and the computer to take 4 turns to guess the battleship's location
     for turn in range(4):
@@ -73,7 +59,6 @@ def play_game():
             guess_col = int(input("Guess Col (0-4): "))
         except ValueError:
             print("Please enter a valid integer.")
-            
             continue
 
         if guess_row == ship_row and guess_col == ship_col:
@@ -87,10 +72,24 @@ def play_game():
             else:
                 print("You missed my battleship!")
                 board[guess_row][guess_col] = "X"
-            if turn == 3:
-                print("Game Over")
+                # computer's turn
+            comp_guess_row = randint(0, len(board) - 1)
+            comp_guess_col = randint(0, len(board[0]) - 1)
 
-        print_board(board)
+        if comp_guess_row == ship_row and comp_guess_col == ship_col:
+            print("Oh no! The computer sunk your battleship!")
+            break
+        else:
+            if board[comp_guess_row][comp_guess_col] == "X":
+                print("The computer guessed that one already.")
+            else:
+                print("The computer missed your battleship!")
+                board[comp_guess_row][comp_guess_col] = "X"
+
+    if turn == 3:
+        print("Game Over")
+
+    print_board(board)
 
 
 if __name__ == "__main__":
