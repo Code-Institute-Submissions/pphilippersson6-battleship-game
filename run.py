@@ -39,6 +39,19 @@ def play_game():
     Returns:
         None
     """
+
+    for row in board:
+        print(" ".join(row))
+
+
+def play_game():
+    """
+    Play a game of Battleship.
+
+    Returns:
+        None
+    """
+
     # initialize the game board
     board = initialize_board(5, 5)
 
@@ -49,16 +62,18 @@ def play_game():
     ship_row = randint(0, len(board) - 1)
     ship_col = randint(0, len(board[0]) - 1)
 
-    # allow the player 4 turns to guess the battleship's location
+
+    # allow the player and the computer to take 4 turns to guess the battleship's location
     for turn in range(4):
         print(f"\nTurn {turn + 1}")
 
-        # prompt the user to guess a row and column
+       # player's turn
         try:
             guess_row = int(input("Guess Row (0-4): "))
             guess_col = int(input("Guess Col (0-4): "))
         except ValueError:
             print("Please enter a valid integer.")
+            
             continue
 
         if guess_row == ship_row and guess_col == ship_col:
