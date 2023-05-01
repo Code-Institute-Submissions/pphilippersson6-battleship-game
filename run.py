@@ -1,3 +1,10 @@
+"""
+Battleship Game
+
+This is a simple game of the classic battleship!
+"""
+
+
 from random import randint
 
 
@@ -75,8 +82,8 @@ def play_game():
             print("Congratulations! You sunk my battleship!")
             break
         else:
-            if (guess_row < 0 or guess_row > 4) or \
-                (guess_col < 0 or guess_col > 4):
+            if (guess_row < 0 or guess_row > 4) or\
+               (guess_col < 0 or guess_col > 4):
 
                 print("Oops, that's not even in the ocean.")
             elif player_board[guess_row][guess_col] == "X":
