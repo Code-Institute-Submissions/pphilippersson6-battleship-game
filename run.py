@@ -83,4 +83,15 @@ else:
         print("You missed my battleship!")
         player_board[guess_row][guess_col] = "X"
 
-        
+        # computer's turn
+        comp_guess_row = randint(0, len(computer_board) - 1)
+        comp_guess_col = randint(0, len(computer_board[0]) - 1)
+
+        if comp_guess_row == ship_row and comp_guess_col == ship_col:
+            print("Oh no! The computer sunk your battleship!")
+            break
+    else:
+        if player_board[comp_guess_row][comp_guess_col] == "X":
+            print("The computer guessed that one already.")
+        else:
+            print("The computer missed")
