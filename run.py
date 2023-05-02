@@ -81,7 +81,6 @@ def play_game():
             print("Congratulations! You sunk my battleship!")
             break
 
-
         print("Let's play Battleship!")
         print_boards(player_board, computer_board, None)
 
@@ -145,5 +144,5 @@ def play_game():
 
     print("Thanks for playing Battleship!")
 
-if __name__ == '__main__':
-    play_game()
+    if __name__ == '__main__':
+        play_game()
