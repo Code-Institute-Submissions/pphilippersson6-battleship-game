@@ -144,5 +144,6 @@ def play_game():
 
     print("Thanks for playing Battleship!")
 
-    if __name__ == '__main__':
-        play_game()
+
+if __name__ == '__main__':
+    play_game()
