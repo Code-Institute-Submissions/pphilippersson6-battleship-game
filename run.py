@@ -73,7 +73,20 @@ def play_game():
         while True:
             try:
                 guess_row = int(input("Guess Row (0-4): "))
+                if guess_row > 4 or guess_row < 0:
+                    print("Please enter Row from (0-4)")
+                    continue
                 guessc = int(input("Guess Col (0-4): "))
+
+                if guessc > 4 or guessc < 0:
+                    while True:
+                        print("Please enter Col from (0-4)")
+                        guessc = int(input("Guess Col (0-4): "))
+                        if guessc > 4 or guessc < 0:
+                            continue
+                        else:
+                            break
+
                 if player_board[guess_row][guessc] == "X":
                     print("You guessed that one already. Please try again.")
                     continue
