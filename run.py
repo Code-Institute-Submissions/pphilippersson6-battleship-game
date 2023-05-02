@@ -139,16 +139,11 @@ def play_game():
         else:
             if player_board[comp_guess_row][comp_guess_col] == "X":
                 print("The computer guessed that one already.")
-           else:
-                if player_board[comp_guess_row][comp_guess_col] == "X":
-                    print("The computer guessed that one already.")
-                else:
-                    print("The computer missed")
+            else:
+                print("The computer missed")
 
             # print current state of the game boards
-            print_boards(player_board,
-                         computer_board,
-                         (comp_guess_row, comp_guess_col))
+            print_boards(player_board, computer_board, (comp_guess_row, comp_guess_col))
 
         # check if the game is over
         if guess_row == ship_row and guess_col == ship_col:
@@ -156,13 +151,13 @@ def play_game():
         else:
             print("Sorry, you lost the game.")
 
-        # ask if the player wants to play again
-        play_again = input("Do you want to play again? (Y/N) ").lower()
-        if play_again == "n":
-            break
+    # ask if the player wants to play again
+    play_again = input("Do you want to play again? (Y/N) ").lower()
+    if play_again == "y":
+        play_game()
 
     print("Thanks for playing Battleship!")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     play_game()
