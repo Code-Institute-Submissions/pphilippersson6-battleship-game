@@ -80,14 +80,28 @@ def play_game():
         if guess_row == ship_row and guess_col == ship_col:
             print("Congratulations! You sunk my battleship!")
             break
+        else:
+            if (guess_row < 0 or guess_row > 4) or (guess_col < 0 or guess_col > 4):
+                print("Oops, that's not even in the ocean.")
+            elif player_board[guess_row][guess_col] == "X":
+                print("You guessed that one already.")
+            else:
+                print("You missed my battleship!")
+                player_board[guess_row][guess_col] = "X"
 
-        print("Let's play Battleship!")
-        print_boards(player_board, computer_board, None)
+        # computer's turn
+        comp_guess_row = randint(0, len(computer_board) - 1)
+        comp_guess_col = randint(0, len(computer_board[0]) - 1)
 
-        # randomly place the battleship
-        ship_row = randint(0, len(computer_board) - 1)
-        ship_col = randint(0, len(computer_board[0]) - 1)
-
+        if comp_guess_row == ship_row and comp_guess_col == ship_col:
+            print("Oh no! The computer sunk your battleship!")
+            break
+        else:
+            if player_board[comp_guess_row][comp_guess_col] == "X":
+                print("The computer guessed that one already.")
+            else:
+                print("The computer missed")
+                player_board[comp_guess_row][comp_guess_col] = "X"
         # allow the player and computer to take 4 turns
         for turn in range(4):
             print(f"\nTurn {turn + 1}")
