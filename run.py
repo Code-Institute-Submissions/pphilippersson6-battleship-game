@@ -57,8 +57,8 @@ def play_game():
     # prompt the player to enter the number of rows and columns
     while True:
         try:
-            rows = int(input("How many rows do you want to play with? (1-10): "))
-            cols = int(input("How many columns do you want to play with? (1-10): "))
+            rows = int(input("How many rows do you want to play? (1-10): "))
+            cols = int(input("How many columns do you want to play? (1-10): "))
             if rows < 1 or rows > 10 or cols < 1 or cols > 10:
                 print("Please enter values between 1 and 10.")
                 continue
