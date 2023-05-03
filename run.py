@@ -54,96 +54,111 @@ def play_game():
     Returns:
         None
     """
-    # initialize the game board
-    player_board = initialize_board(5, 5)
-    computer_board = initialize_board(5, 5)
+    # prompt the player to enter the number of rows and columns
+    while True:
+        try:
+            rows = int(input("How many rows do you want to play with? (1-10): "))
+            cols = int(input("How many columns do you want to play with? (1-10): "))
+            if rows < 1 or rows > 10 or cols < 1 or cols > 10:
+                print("Please enter values between 1 and 10.")
+                continue
+            else:
+                break
+        except ValueError:
+            print("Please enter a valid integer.")
 
-    print("Let's play Battleship!")
-    print_boards(player_board, computer_board, None)
+    # initialize the game board
+    player_board = initialize_board(rows, cols)
+    computer_board = initialize_board(rows, cols)
 
     # randomly place the battleship
     ship_row = randint(0, len(computer_board) - 1)
     ship_col = randint(0, len(computer_board[0]) - 1)
+
+    print("Let's play Battleship!")
+    print_boards(player_board, computer_board, None)
 
     # allow the player and computer to take 4 turns
     for turn in range(4):
         print(f"\nTurn {turn + 1}")
 
         # player's turn
-        try:
-            guess_row = int(input("Guess Row (0-4): "))
-            guess_col = int(input("Guess Col (0-4): "))
-        except ValueError:
-            print("Please enter a valid integer.")
-            continue
-
-        if guess_row == ship_row and guess_col == ship_col:
-            print("Congratulations! You sunk my battleship!")
-            break
-
-        print("Let's play Battleship!")
-        print_boards(player_board, computer_board, None)
-
-        # randomly place the battleship
-        ship_row = randint(0, len(computer_board) - 1)
-        ship_col = randint(0, len(computer_board[0]) - 1)
-
-        # allow the player and computer to take 4 turns
-        for turn in range(4):
-            print(f"\nTurn {turn + 1}")
-
-            # player's turn
+        while True:
             try:
-                guess_row = int(input("Guess Row (0-4): "))
-                guess_col = int(input("Guess Col (0-4): "))
+                guess_row = int(input(f"Guess Row (0-{rows - 1}): "))
+                if guess_row < 0 or guess_row > rows - 1:
+                    print(f"Please enter Row from (0-{rows - 1})")
+                    continue
+                guessc = int(input(f"Guess Col (0-{cols - 1}): "))
+
+                if guessc < 0 or guessc > cols - 1:
+                    while True:
+                        print(f"Please enter Col from (0-{cols - 1})")
+                        guessc = int(input(f"Guess Col (0-{cols - 1}): "))
+                        if guessc < 0 or guessc > cols - 1:
+                            continue
+                        else:
+                            break
+
+                if player_board[guess_row][guessc] == "X":
+                    print("You guessed that one already. Please try again.")
+                    continue
+                else:
+                    break
             except ValueError:
-                print("Please enter a valid integer.")
+                print(f"Please enter a number from 0-{rows - 1}.")
                 continue
 
-            if guess_row == ship_row and guess_col == ship_col:
-                print("Congratulations! You sunk my battleship!")
-                break
-            else:
-                if (guess_row < 0 or guess_row > 4) or\
-                        (guess_col < 0 or guess_col > 4):
-                    print("Oops, that's not even in the ocean.")
-                elif player_board[guess_row][guess_col] == "X":
-                    print("You guessed that one already.")
-                else:
-                    print("You missed my battleship!")
-                    player_board[guess_row][guess_col] = "X"
-
-            # computer's turn
-            comp_guess_row = randint(0, len(computer_board) - 1)
-            comp_guess_col = randint(0, len(computer_board[0]) - 1)
-
-            if comp_guess_row == ship_row and comp_guess_col == ship_col:
-                print("Oh no! The computer sunk your battleship!")
-                break
-            else:
-                if player_board[comp_guess_row][comp_guess_col] == "X":
-                    print("The computer guessed that one already.")
-                else:
-                    print("The computer missed")
-
-            # print current state of the game boards
-            print_boards(player_board,
-                         computer_board,
-                         (comp_guess_row, comp_guess_col))
-
-        # check if the game is over
-        if guess_row == ship_row and guess_col == ship_col:
-            print("Congratulations! You won the game!")
-        else:
-            print("Sorry, you lost the game.")
-
-        # ask if the player wants to play again
-        play_again = input("Do you want to play again? (Y/N) ").lower()
-        if play_again == "n":
+        if guess_row == ship_row and guessc == ship_col:
+            print("Congratulations! You sunk my battleship!")
             break
+        else:
+            if (guess_row < 0 or guess_row > rows - 1) or (
+                guessc < 0 or guessc > cols - 1
+            ):
+                print("Oops, that's not even in the ocean.")
+            else:
+                print("You missed my battleship!")
+                player_board[guess_row][guessc] = "X"
 
+        # computer's turn
+        comp_guess_row = randint(0, len(computer_board) - 1)
+        cguess = randint(0, len(computer_board[0]) - 1)
+
+        if comp_guess_row == ship_row and cguess == ship_col:
+            print("Oh no! The computer sunk your battleship!")
+            break
+        else:
+            if player_board[comp_guess_row][cguess] == "X":
+                print("The computer guessed that one already.")
+            else:
+                print("The computer missed")
+                player_board[comp_guess_row][cguess] = "X"
+
+        # print current state of the game boards
+        print_boards(player_board, computer_board, (comp_guess_row, cguess))
+
+    # check if the game is over
+    if guess_row == ship_row and guessc == ship_col:
+        print("Congratulations! You win!")
+    else:
+        print("Sorry, you lose. Better luck next time!")
+
+
+def play():
+    """
+    Play Battleship until the player quits.
+
+    Returns:
+        None
+    """
+    while True:
+        play_game()
+        play_again = input("Do you want to play again? (y/n): ")
+        if play_again.lower() == "n":
+            break
     print("Thanks for playing Battleship!")
 
 
-if __name__ == '__main__':
-    play_game()
+if __name__ == "__main__":
+    play()
