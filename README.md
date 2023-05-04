@@ -85,9 +85,15 @@ Try out the game here. [ ](/)
 # Testing
 
 # Bugs
+I had one problem at the beginning of my coding, and it was that one of my lines were too long.
+After some research, i found out very fast how i could break up the code.
+![error message line too long](readme-assets/errormsg.png)
+![python code too long](readme-assets/too-long-code.png)
 
 # Remaining Bugs
 
 ## Validator testing
+The python code was tested from a pep8, and no errors could be found! [PEP8 validator](https://pep8ci.herokuapp.com/)
+![Validator pep8 check](readme-assets/pep8validator-no-error.png)
 
 ### Content
