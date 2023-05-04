@@ -34,9 +34,9 @@ Happy coding!
 # Battleship Game
 This is a simple implemention to play the "Battleship Game" using only python.
 
-Try out the game here. [ Rock, Paper, Scissor Game!](https://pphilippersson6.github.io/Rock-Paper-Scissors/)
+Try out the game here. [ ](/)
 
-![Am i Responsive](readme-assets/amiresponsive.png)
+![Am i Responsive]()
 
 # Usage
 
@@ -81,3 +81,13 @@ Try out the game here. [ Rock, Paper, Scissor Game!](https://pphilippersson6.git
 
 # Requirements
 * This game requires Python 3.x and the `random` module.
+
+# Testing
+
+# Bugs
+
+# Remaining Bugs
+
+## Validator testing
+
+### Content
