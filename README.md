@@ -61,6 +61,25 @@ Try out the game here. [ ](/)
 * If a player hits all of the squares of a ship, the ship is considered "sunk".
 * The first player to sink all of the other player's ships wins the game.
 
+# Layout/Data model
+The Battleship Game is a simple game played on a board with a grid of cells. 
+The objective of the game is to guess the location of the computer's hidden battleship
+and sink it before the computer sinks the player's battleship.
+The game board is represented by a 2D list, where each cell can be either "O" (for empty) or 
+"X" (for a hit). The game starts with both the player and the computer's board initialized with all "O" cells.
+
+During each turn, the player enters a row and column to guess the location of the computer's battleship.
+If the guess matches the location of the battleship, the player wins.
+Otherwise, the player's guess is marked as a hit on the board with an "X".
+
+After the player's turn, the computer makes a random guess by selecting a cell on the player's board.
+If the guess matches the location of the player's battleship, the computer wins. 
+Otherwise, the computer's guess is marked as a hit on the board with an "X".
+
+The game continues until either the player or the computer sinks the other's battleship. 
+At the end, the game also provides an option for the player to start a new game once the current game is over.
+
+
 # Features and Functions
 
 ## Features
