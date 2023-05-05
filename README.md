@@ -139,4 +139,14 @@ The python code was tested from a pep8, and no errors could be found! [PEP8 vali
 
 ![Validator pep8 check](readme-assets/pep8validator-no-error.png)
 
+# Deployment
+
+##
+
+# Credits
+
 ### Content
+https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+PE_PAGPPF+2021_Q2/courseware/b3378fc1159e43e3b70916fdefdfae51/605f34e006594dc4ae19f5e60ec75e2e/
+https://pep8ci.herokuapp.com/
+https://www.youtube.com/watch?v=7Ki_2gr0rsE
+https://www.pythonmorsels.com/breaking-long-lines-code-python/
