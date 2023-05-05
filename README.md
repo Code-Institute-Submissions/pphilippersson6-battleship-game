@@ -142,32 +142,69 @@ The python code was tested from a pep8, and no errors could be found! [PEP8 vali
 # Deployment
 
 ## Heroku linking/deployment
-* Register at Heroku.com
-* Create new app
-* Insert an app name - should be an unique name.
-* Press Create app
+1. Register at Heroku.com
+2. Create new app
 
-![Step 1]()
+![Step 1](readme-assets/herokustep1.PNG)
 
-* Navigate to settings, and press **Add buildpack**
+3. Insert an app name - should be an unique name.
 
-![Step 2]()
-* Press on Python, and save. Then you add a second buildpack, Nodejs.
-* It is important that the Python is above the Nodejs!
+4. Press Create app
 
-* Above the buildpack, you can find **Config Vars**. Press it, and enter the **KEY** and **VALUE**
-* Those should be: KEY: Port, and VALUE: 8000. 
+![Step 2](readme-assets/herokustep2.PNG)
 
-![Step 5]()
 
-* Head over to Deploy at the top of the page. 
-* Press connect to github as a deployment method.
-* Search for your github repo (name of the project) and connect.
+5. Navigate to settings, and press **Add buildpack**
 
-![Step 7]()
+![Step 3](readme-assets/herokustep3.PNG)
+
+6. Press on Python, and save. Then you add a second buildpack, Nodejs.
+ * It is important that the Python is above the Nodejs!
+
+![Step 4](readme-assets/herokustep4.PNG)
+
+7. Above the buildpack, you can find **Config Vars**. Press it, and enter the **KEY** and **VALUE**
+ * Those should be: KEY: Port, and VALUE: 8000. 
+
+![Step 5](readme-assets/herokustep5.PNG)
+
+8. Head over to Deploy at the top of the page. 
+9. Press connect to github as a deployment method.
+
+![Step 6](readme-assets/herokustep6.PNG)
+
+10. Search for your github repo (name of the project) and press connect.
+
+![Step 7](readme-assets/herokustep7.PNG)
+
 
 ## Github deployment
 
+## Deploy the project to Github
+This project is deployed on Github pages, and on Heroku.
+Now when you have set-up the heroku link, it will deploy on Heroku
+when you deploy it on github.
+
+To deploy something on Github, you follow these steps below.
+
+1. Navigate to Settings when you are on the project you want to deploy.
+
+2. Scroll all the way down to **Pages** on the left side, and press.
+
+
+3. There you have a header that's called **Build and deployment**, and a second header that says **Branch**.
+ Select the **source** where you created the repo. Its often called **main** or **master**, and press **save**.
+ 
+ ![Github deployment 1](readme-assets/github-deploy1.PNG)
+
+![Github deployment 2](readme-assets/github-deploy2.PNG)
+
+
+4. After some minutes, refresh the webpage, and the website will be shown as live on top of the page. 
+* If you get a link to your project, everything is finished, and your project is live. (The link should look like this: https://pphilippersson6.github.io/battleship-game/).
+
+
+![Github HTML link](readme-assets/github-live-link.png)
 
 
 # Credits

@@ -121,7 +121,8 @@ def play_game():
                     print("The computer missed.")
                     player_board[comp_guess_row][comp_guess_col] = "X"
                 print_boards(
-                    player_board, computer_board, (comp_guess_row, comp_guess_col)
+                    player_board, computer_board,
+                    (comp_guess_row, comp_guess_col)
                 )
 
         if guess_row == ship_row and guess_col == ship_col:
@@ -133,6 +134,12 @@ def play_game():
 
 
 def play():
+    """
+    Lets you play one more time or quit the game
+
+    Y = play again
+    N = quit
+    """
     while True:
         play_game()
         while True:
