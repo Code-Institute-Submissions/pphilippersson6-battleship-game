@@ -141,7 +141,34 @@ The python code was tested from a pep8, and no errors could be found! [PEP8 vali
 
 # Deployment
 
-##
+## Heroku linking/deployment
+* Register at Heroku.com
+* Create new app
+* Insert an app name - should be an unique name.
+* Press Create app
+
+![Step 1]()
+
+* Navigate to settings, and press **Add buildpack**
+
+![Step 2]()
+* Press on Python, and save. Then you add a second buildpack, Nodejs.
+* It is important that the Python is above the Nodejs!
+
+* Above the buildpack, you can find **Config Vars**. Press it, and enter the **KEY** and **VALUE**
+* Those should be: KEY: Port, and VALUE: 8000. 
+
+![Step 5]()
+
+* Head over to Deploy at the top of the page. 
+* Press connect to github as a deployment method.
+* Search for your github repo (name of the project) and connect.
+
+![Step 7]()
+
+## Github deployment
+
+
 
 # Credits
 
@@ -150,3 +177,4 @@ https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+PE_PAGPPF+2021_Q
 https://pep8ci.herokuapp.com/
 https://www.youtube.com/watch?v=7Ki_2gr0rsE
 https://www.pythonmorsels.com/breaking-long-lines-code-python/
+AM I RESPONSIVE
