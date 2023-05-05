@@ -95,7 +95,7 @@ And type "n" if you don't want to play again.
 
 # Bugs
 I had one problem at the beginning of my coding, and it was that one of my lines were too long.
-After some research, i found out very fast how i could break up the code.
+After some research, I found out very fast how I could break up the code-line into two lines.
 
 ![error message line too long](readme-assets/errormsg.png)
 ![python code too long](readme-assets/too-long-code.png)
@@ -159,7 +159,6 @@ To deploy something on Github, you follow these steps below.
 
 2. Scroll all the way down to **Pages** on the left side, and press.
 
-
 3. There you have a header that's called **Build and deployment**, and a second header that says **Branch**.
  Select the **source** where you created the repo. Its often called **main** or **master**, and press **save**.
  
@@ -167,13 +166,9 @@ To deploy something on Github, you follow these steps below.
 
 ![Github deployment 2](readme-assets/github-deploy2.PNG)
 
-
 4. After some minutes, refresh the webpage, and the website will be shown as live on top of the page. 
-* If you get a link to your project, everything is finished, and your project is live. (The link should look like this: https://pphilippersson6.github.io/battleship-game/).
-
-
-![Github HTML link](readme-assets/github-live-link.png)
-
+* If you get a link to your project, everything is finished, and your project is live. 
+(The link should look like this: https://pphilippersson6.github.io/battleship-game/).
 
 # Credits
 
@@ -182,6 +177,6 @@ To deploy something on Github, you follow these steps below.
 * [pep8 checker](https://pep8ci.herokuapp.com/) for checking my code for errors.
 * [Learn Python with CodeCademy: Battleship!](https://www.youtube.com/watch?v=7Ki_2gr0rsE) for helping me with the code, and structure of the game.
 * [pythonmorsels](https://www.pythonmorsels.com/breaking-long-lines-code-python/) helped me for breaking my long code.
-* [Am I Responsive](https://ui.dev/amiresponsive) For a nice layout in my readme file.
+* [Am I Responsive](https://ui.dev/amiresponsive) for a nice layout in my readme file.
 * [Heroku](https://heroku.com/) for deploying/storing/helps run the project.
 * [Github](https://github.com) for deploying/storing/helps run the project.
