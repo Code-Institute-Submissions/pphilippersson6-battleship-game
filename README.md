@@ -65,7 +65,29 @@ Try out the game here. [ ](/)
 
 ## Features
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* Adjust the grid/player board size between 1-10
+columns and rows. The player can choose by its own!
+
+![Adjust size](readme-assets/step1.png)
+
+* Play versus the computer.
+* Two playing-boards. The players and the computers.
+* Take turns to guess row and columns.
+
+![Gameboard]readme-assets/step2.png
+
+* When the game is finished, you got two options.
+"y" or "n". Type "y" if you want to play again. 
+And type "n" if you don't want to play again.
+
+![Finished game options](readme-assets/step3.png)
+
+* You cannot input numbers that are above the grid-size.
+* You cannot input text. It has to be numbers.
+* You cannot enter the same numbers two times.
+
+![Enter a number](readme-assets/enteranumber.png)
+![Enter correct row](readme-assets/entercorrectrow.png)
 
 
 ## Future Improvements
@@ -87,6 +109,7 @@ Try out the game here. [ ](/)
 # Bugs
 I had one problem at the beginning of my coding, and it was that one of my lines were too long.
 After some research, i found out very fast how i could break up the code.
+
 ![error message line too long](readme-assets/errormsg.png)
 ![python code too long](readme-assets/too-long-code.png)
 
@@ -94,6 +117,7 @@ After some research, i found out very fast how i could break up the code.
 
 ## Validator testing
 The python code was tested from a pep8, and no errors could be found! [PEP8 validator](https://pep8ci.herokuapp.com/)
+
 ![Validator pep8 check](readme-assets/pep8validator-no-error.png)
 
 ### Content
