@@ -1,42 +1,9 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-Welcome pphilippersson6,
-
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
-
-## Reminders
-
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
-
-
 # Battleship Game
 This is a simple implemention to play the "Battleship Game" using only python.
 
-Try out the game here. [ ](/)
+Try out the game here. [Battleship Game ](https://battleship-game-custom.herokuapp.com/)
 
-![Am i Responsive]()
+![Am i Responsive](readme-assets/amiresponsive.PNG)
 
 # Usage
 
@@ -87,19 +54,20 @@ At the end, the game also provides an option for the player to start a new game 
 * Adjust the grid/player board size between 1-10
 columns and rows. The player can choose by its own!
 
-![Adjust size](readme-assets/step1.png)
+![Adjust size](readme-assets/step1GAME.png)
 
 * Play versus the computer.
 * Two playing-boards. The players and the computers.
 * Take turns to guess row and columns.
 
-![Gameboard]readme-assets/step2.png
+![Gameboard](readme-assets/step2GAME.png)
 
 * When the game is finished, you got two options.
 "y" or "n". Type "y" if you want to play again. 
 And type "n" if you don't want to play again.
 
-![Finished game options](readme-assets/step3.png)
+
+![Finished game options](readme-assets/step3GAME.png)
 
 * You cannot input numbers that are above the grid-size.
 * You cannot input text. It has to be numbers.
@@ -210,8 +178,10 @@ To deploy something on Github, you follow these steps below.
 # Credits
 
 ### Content
-https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+PE_PAGPPF+2021_Q2/courseware/b3378fc1159e43e3b70916fdefdfae51/605f34e006594dc4ae19f5e60ec75e2e/
-https://pep8ci.herokuapp.com/
-https://www.youtube.com/watch?v=7Ki_2gr0rsE
-https://www.pythonmorsels.com/breaking-long-lines-code-python/
-AM I RESPONSIVE
+* [Code institute](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+PE_PAGPPF+2021_Q2/courseware/b3378fc1159e43e3b70916fdefdfae51/605f34e006594dc4ae19f5e60ec75e2e/) for inspiration, and help with readmefile, and game.
+* [pep8 checker](https://pep8ci.herokuapp.com/) for checking my code for errors.
+* [Learn Python with CodeCademy: Battleship!](https://www.youtube.com/watch?v=7Ki_2gr0rsE) for helping me with the code, and structure of the game.
+* [pythonmorsels](https://www.pythonmorsels.com/breaking-long-lines-code-python/) helped me for breaking my long code.
+* [Am I Responsive](https://ui.dev/amiresponsive) For a nice layout in my readme file.
+* [Heroku](https://heroku.com/) for deploying/storing/helps run the project.
+* [Github](https://github.com) for deploying/storing/helps run the project.
