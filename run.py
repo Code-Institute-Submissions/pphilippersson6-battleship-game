@@ -23,20 +23,20 @@ def initialize_board(rows, cols):
     return board
 
 
-def print_boards(player_board, computer_board, computer_guess):
+def print_boards(computer_board, player_board, computer_guess):
     """
     Prints the player and computer board with with computer's latest guess.
 
     Args:
-    player_board (list): list representing the player's board.
-    computer_board (list): list representing the computer's board.
+    computer_board (list): list representing the player's board.
+    player_board (list): list representing the computer's board.
     computer_guess (tuple): A tuple showing the computer's latest guess.
     """
     print("Player board:")
-    for row in player_board:
+    for row in computer_board:
         print(" ".join(row))
     print("\nComputer board:")
-    for i, row in enumerate(computer_board):
+    for i, row in enumerate(player_board):
         if computer_guess is not None and i == computer_guess[0]:
             row[computer_guess[1]] = "X"
         print(" ".join(row))
@@ -64,15 +64,15 @@ def play_game():
             print("Please enter a valid integer.")
 
     # Initialize player and computer boards
-    player_board = initialize_board(rows, cols)
     computer_board = initialize_board(rows, cols)
+    player_board = initialize_board(rows, cols)
 
     # Randomly place the computer's battleship on the board
-    ship_row = randint(0, len(computer_board) - 1)
-    ship_col = randint(0, len(computer_board[0]) - 1)
+    ship_row = randint(0, len(player_board) - 1)
+    ship_col = randint(0, len(player_board[0]) - 1)
 
     print("Let's play Battleship!")
-    print_boards(player_board, computer_board, None)
+    print_boards(computer_board, player_board, None)
 
     # Start the game loop
     while True:
@@ -89,7 +89,7 @@ def play_game():
                     if guess_col < 0 or guess_col > cols - 1:
                         print(f"Please enter Col from (0-{cols - 1})")
                         continue
-                    if player_board[guess_row][guess_col] == "X":
+                    if computer_board[guess_row][guess_col] == "X":
                         print("You guessed that one already. Try again.")
                         continue
                     else:
@@ -108,13 +108,13 @@ def play_game():
                     print("Oops, that's not even in the ocean.")
                 else:
                     print("You missed the computer's battleship!")
-                    player_board[guess_row][guess_col] = "X"
+                    computer_board[guess_row][guess_col] = "X"
 
             # Computer's turn to guess
             while True:
-                comp_guess_row = randint(0, len(computer_board) - 1)
-                comp_guess_col = randint(0, len(computer_board[0]) - 1)
-                if computer_board[comp_guess_row][comp_guess_col] == "X":
+                comp_guess_row = randint(0, len(player_board) - 1)
+                comp_guess_col = randint(0, len(player_board[0]) - 1)
+                if player_board[comp_guess_row][comp_guess_col] == "X":
                     continue
                 else:
                     break
@@ -124,12 +124,12 @@ def play_game():
                 print("Oh no! The computer sunk your battleship!")
                 break
             else:
-                if player_board[comp_guess_row][comp_guess_col] == "X":
+                if computer_board[comp_guess_row][comp_guess_col] == "X":
                     print("The computer guessed that one already.")
                 else:
                     print("The computer missed.")
                 print_boards(
-                    player_board, computer_board,
+                    computer_board, player_board,
                     (comp_guess_row, comp_guess_col)
                 )
 
